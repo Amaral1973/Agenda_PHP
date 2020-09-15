@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Set-2020 às 01:50
+-- Tempo de geração: 15-Set-2020 às 19:56
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.9
 
@@ -24,6 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `pessoa`
+--
+
+CREATE TABLE `pessoa` (
+  `id` int(11) NOT NULL,
+  `tipo` varchar(10) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `endereco` varchar(100) NOT NULL,
+  `cidade` varchar(85) NOT NULL,
+  `estado` varchar(2) NOT NULL,
+  `celular` varchar(15) NOT NULL,
+  `email` varchar(85) NOT NULL,
+  `datanascimento` date NOT NULL,
+  `profissao` varchar(85) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `pessoa`
+--
+
+INSERT INTO `pessoa` (`id`, `tipo`, `nome`, `endereco`, `cidade`, `estado`, `celular`, `email`, `datanascimento`, `profissao`) VALUES
+(1, 'fisica', 'Emerson Amaral Bueno de Camargo', 'Avenida XV de Novembro', 'Maringá', 'PR', '9999-9999', 'emersonb6@hotmail.com', '1973-02-03', 'Professor'),
+(2, 'juridica', 'Softhouse Show', 'Rua dos Palmares, 23', 'Maringá', 'PR', '9999-9991', 'show@show.com', '2010-12-12', 'Programador');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `usuario`
 --
 
@@ -40,14 +67,19 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `tipo`) VALUES
-(1, 'Chico Anysio', 'teste', 'teste', 'admin'),
-(2, 'Tomb Raider', 'teste2', 'teste2', 'normal'),
-(3, 'Profisor Krabs', 'krabs', 'krabs', 'admin'),
-(4, 'Baioneta', 'game', 'game', 'normal');
+(1, 'Chico Anysio', 'chico', 'chico', 'admin'),
+(2, 'Tomb Raider', 'teste4', 'teste4', 'normal'),
+(3, 'Profisor Krabs', 'krabs', 'krabs', 'admin');
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `pessoa`
+--
+ALTER TABLE `pessoa`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `usuario`
@@ -58,6 +90,12 @@ ALTER TABLE `usuario`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `pessoa`
+--
+ALTER TABLE `pessoa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
