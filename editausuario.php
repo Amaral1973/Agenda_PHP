@@ -28,17 +28,23 @@
             ?>
         </nav>
         <section>
+            <?php
+                include("conecta.php");
+                $id = $_GET['id'];
+                $sql2 = mysqli_query($conn, "SELECT * FROM usuario WHERE id='$id'") or die(mysqli_error($conn));
+                while($usuario = mysqli_fetch_array($sql2)){
+            ?>
             <br/><br/>
             <div class="mx-auto" style="width: 500px;">
-            <form action="cadusuario.php" method="POST">
+            <form action="editausuariobd.php?id=<?php echo $id; ?>" method="POST">
                 <label>Nome</label>
-                <input type="text" name="nome"/>
+                <input type="text" name="nome" value="<?php echo $usuario['nome']; ?>"/>
                 <br/><br/>
                 <label>Login</label>
-                <input type="text" name="login"/>
+                <input type="text" name="login" value="<?php echo $usuario['login']; ?>"/>
                 <br/><br/>
                 <label>Senha</label>
-                <input type="password" name="senha"/>
+                <input type="password" name="senha" value="<?php echo $usuario['senha']; ?>"/>
                 <br/><br/>
                 <label>Tipo do usuário</label>
                 <select name="tipo">
@@ -46,8 +52,12 @@
                     <option value="normal">normal</option>
                 </select>
                 <br/><br/>
-                <button type="submit" class="btn btn-outline-success">Gravar Usuário</button>
+                <button type="submit" class="btn btn-outline-success">Editar Usuário</button>
             </form>
+            <?php
+                }
+                mysqli_close($conn);
+            ?>
             </div>
             <br/>
             <?php
