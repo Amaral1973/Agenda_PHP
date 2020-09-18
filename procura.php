@@ -29,23 +29,12 @@
             <hr/>
         </nav>
         <section>
-            <form action="procura.php" method="POST">
-                <label>Digite a sua procura</label>
-                <input type="text" name="procura" placeholder="Digite um nome">
-                <br/><br/>
-                <button type="submit" class="btn btn-success">Procurar</button>
-            </form>
-            <br/>
-            <hr/>
-            <center><h4>A | B | C | D | E | F | G | H | I | J | L | M | N | O | P | Q | R | S | T | U | V | X | W | Y | Z</h4></center>
-            <br/>
-            <a href="cadpessoa.php">Cadastrar Pessoa</a>
-            <br/><br/>
-            <h4>Pessoas Cadastradas na Agenda</h4>
+            <h4>Pesquisa de Nome</h4>
             <br/>
             <?php
                 include("conecta.php");
-                $sql = mysqli_query($conn, "SELECT * FROM pessoa");
+                $nome = $_POST['procura'];
+                $sql = mysqli_query($conn, "SELECT * FROM pessoa WHERE nome LIKE '%".$nome."%'");
                 echo "<table class='table table-hover'>";
                 echo "<tr>";
                     echo "<th>Nome</th>";

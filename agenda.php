@@ -10,28 +10,37 @@
         <title>Agenda 2.0</title>
         <meta charset = "UTF-8"/>
         <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     </head>
     <body>
         <header>
-            <div><h4>Agenda 2.0 - TDS - SENAI</h4></div>
-            <hr/>
-            <?php
-                echo $_SESSION["user"];
-                echo "<a href='sair.php' style='text-decoration: none; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
-            ?>
+            <div class="col-md-4 col-md-offset-4"><h3>Agenda 2.0 - TDS - SENAI</h3></div>
+            <br/><br/>
         </header>
         <nav>
             <hr/>
-            <?php
-                include("menu.php");
-            ?>
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="col-xs-6 col-xs-offset-0">
+                    <?php
+                        include("menu.php");
+                    ?>
+                </div>
+                <div class="col-xs-4 col-xs-offset-1">
+                    <?php
+                        echo "<span class='glyphicon glyphicon-user' aria-hidden='true'></span>";
+                        echo $_SESSION["user"];
+                        echo "<a href='sair.php' style='text-decoration: none; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
+                    ?>
+                </div>
+            </div>
         </nav>
         <section>
+            <br/><br/>
         </section>
         <footer>
+            <br/>
             <hr/>
-            <div>Agenda 2.0 Desenvolvido em Aula - Versão 1.0</div>
+            <div class="col-md-4 col-md-offset-4">Agenda 2.0 Desenvolvido em Aula - Versão 1.0</div>
         </footer>
     </body>
 </html>

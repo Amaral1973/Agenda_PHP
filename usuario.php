@@ -10,51 +10,65 @@
         <title>Agenda 2.0</title>
         <meta charset = "UTF-8"/>
         <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     </head>
     <body>
         <header>
-            <div><h4>Agenda 2.0 - TDS - SENAI</h4></div>
-            <hr/>
-            <?php
-                echo $_SESSION["user"];
-                echo "<a href='sair.php' style='text-decoration: none; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
-            ?>
+        <div class="col-md-4 col-md-offset-4"><h3>Agenda 2.0 - TDS - SENAI</h3></div>
+         <br/><br/>
         </header>
         <nav>
-            <hr/>
-            <?php
-                include("menu.php");
-            ?>
+        <hr/>
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="col-xs-6 col-xs-offset-0">
+                    <?php
+                        include("menu.php");
+                    ?>
+                </div>
+                <div class="col-xs-4 col-xs-offset-1">
+                    <?php
+                        echo "<span class='glyphicon glyphicon-user' aria-hidden='true'></span>";
+                        echo $_SESSION["user"];
+                        echo "<a href='sair.php' style='text-decoration: none; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
+                    ?>
+                </div>
+            </div>
+            <br/>
         </nav>
         <section>
             <br/><br/>
-            <div class="mx-auto" style="width: 500px;">
-            <form action="cadusuario.php" method="POST">
-                <label>Nome</label>
-                <input type="text" name="nome"/>
-                <br/><br/>
-                <label>Login</label>
-                <input type="text" name="login"/>
-                <br/><br/>
-                <label>Senha</label>
-                <input type="password" name="senha"/>
-                <br/><br/>
-                <label>Tipo do usuário</label>
-                <select name="tipo">
-                    <option value="admin">admin</option>
-                    <option value="normal">normal</option>
-                </select>
-                <br/><br/>
-                <button type="submit" class="btn btn-outline-success">Gravar Usuário</button>
-            </form>
+            <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Cadastro de Usuários</h3></div>
+                        <div class="panel-body">
+                            <form name="usuario" id="cadusuario" action="cadusuario.php" method="post">
+                            <label>Nome</label> 
+                            <input type="text" name="nome" placeholder="Digite o seu nome" maxlength="30" required="required" autofocus class="form-control" />
+                            <br/>
+                            <label>Login</label> 
+                            <input type="text" name="login" placeholder="Digite o seu login" maxlength="30"  required="required" class="form-control" />
+                            <br/>
+                            <label>Senha</label> 
+                            <input type="password" name="senha" placeholder="Digite a sua senha" maxlength="30"  required="required" class="form-control" />
+                            <br/>
+                            <label>Tipo do usuário</label>
+                            <select name="tipo" class="form-control">
+                                <option value="admin">admin</option>
+                                <option value="normal">normal</option>
+                            </select>
+                            <br/>
+                            <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                        </div>
+                </div>
             </div>
             <br/>
+            <div class="col-md-4 col-md-offset-1">
             <?php
                 include("conecta.php");
                 echo "<h4>Usuários Cadastrados</h4>";
                 $sql = mysqli_query($conn, "SELECT * FROM usuario");
-                echo "<table border=1";
+                echo "<table class='table table-hover'>";
                 echo "<tr>";
                     echo "<th>Nome</th>";
                     echo "<th>Login</th>";
@@ -72,10 +86,11 @@
                 }
                 mysqli_close($conn);
             ?>
+            </div>
+            </div>
         </section>
         <footer>
-            <hr/>
-            <div>Agenda 2.0 Desenvolvido em Aula - Versão 1.0</div>
+                
         </footer>
     </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Set-2020 às 19:56
+-- Tempo de geração: 19-Set-2020 às 01:12
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.9
 
@@ -68,8 +68,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `tipo`) VALUES
 (1, 'Chico Anysio', 'chico', 'chico', 'admin'),
-(2, 'Tomb Raider', 'teste4', 'teste4', 'normal'),
-(3, 'Profisor Krabs', 'krabs', 'krabs', 'admin');
+(2, 'Tomb Raider', 'teste', 'teste', 'normal');
 
 --
 -- Índices para tabelas despejadas
@@ -101,7 +100,7 @@ ALTER TABLE `pessoa`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
