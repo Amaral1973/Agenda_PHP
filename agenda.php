@@ -40,7 +40,7 @@
         <footer>
             <br/>
             <hr/>
-            <div class="col-md-4 col-md-offset-4">Agenda 2.0 Desenvolvido em Aula - Versão 1.0</div>
+            <div style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: DodgerBlue; color: white; text-align: center;">Agenda 2.0 Desenvolvido em Aula - Versão 1.0</div>
         </footer>
     </body>
 </html>
