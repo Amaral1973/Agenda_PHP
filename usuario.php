@@ -3,6 +3,9 @@
     if($_SESSION["status"] !="OK"){
         header('location:index.php');
     }
+    if($_SESSION["tipo"] !="admin"){
+        header('location:agenda.php');
+    }
 ?>
 <!DOCTYPE HTML>
 <html>

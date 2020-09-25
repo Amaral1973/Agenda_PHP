@@ -3,6 +3,9 @@
     if($_SESSION["status"] !="OK"){
         header('location:index.php');
     }
+    if($_SESSION["tipo"] !="admin"){
+        header('location:agenda.php');
+    }
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -45,7 +48,7 @@
         ?>
         <div style="width: 35%; float:left; padding-left:5%;">
         <div class="panel panel-primary">
-            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Cadastro de Usuários</h3></div>
+            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Edição de Usuários</h3></div>
                 <div class="panel-body">
                     <form name="usuario" id="cadusuario" action="editausuariobd.php?id=<?php echo $id; ?>" method="post">
                     <label>Nome</label> 

@@ -52,7 +52,17 @@
         </div>
         <br/>
         <hr/>
-        <center><h4>A | B | C | D | E | F | G | H | I | J | L | M | N | O | P | Q | R | S | T | U | V | X | W | Y | Z</h4></center>
+        <div align="center">
+            <?php
+                include("conecta.php");
+                $letra = mysqli_query($conn, "SELECT DISTINCT LEFT(nome, 1) AS letra from pessoa ORDER BY letra");
+                while($letras = mysqli_fetch_array($letra)){
+                    $inicial = strtoupper($letras['letra']);
+                    echo '<button type="submit" class="btn btn-primary" value="'.$inicial.'" name="letra"><b>'.$inicial.'</b></button>|';
+                }
+                mysqli_close($conn);
+            ?>
+        </div>
         <br/>
         <center><a href="cadpessoa.php"><button class="btn btn-primary"><b>Cadastrar Pessoa</b></button></a></center>
         <br/>

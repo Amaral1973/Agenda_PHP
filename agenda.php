@@ -35,6 +35,67 @@
             </div>
         </nav>
         <section>
+            <hr/>
+            <br/><br/>
+        <div style="width: 30%; float:left; padding-left:2%; padding-right:2%">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;Dados da Agenda</h3></div>
+                <div class="panel-body">
+                    <?php
+                    include("conecta.php");
+                    $usuario = mysqli_query($conn, "SELECT count(*) as usuarios from usuario");
+                    $numero = mysqli_fetch_array($usuario)
+                    ?>
+                    Usuários Cadastrados 
+                    <?php echo "<b>".$numero['usuarios']."</b>";?>
+                    <?php mysqli_close($conn); ?>
+                    <br/><br/>
+                    <?php
+                    include("conecta.php");
+                    $pessoa = mysqli_query($conn, "SELECT count(*) as pessoas from pessoa");
+                    $numero = mysqli_fetch_array($pessoa)
+                    ?>
+                    Pessoas Cadastradas 
+                    <?php echo "<b>".$numero['pessoas']."</b>"; ?>
+                    <?php mysqli_close($conn); ?>
+                    <br/>
+                </div>    
+        </div>
+        </div>
+        <div style="width: 30%; float:left; padding-left:2%; padding-right:2%">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-king" aria-hidden="true"></span>&nbsp;Físicas / Jurídicas</h3></div>
+                <div class="panel-body">
+                    <?php
+                    include("conecta.php");
+                    $juridica = mysqli_query($conn, "SELECT count(*) as juridica from pessoa WHERE tipo='jurídica'");
+                    $numero = mysqli_fetch_array($juridica)
+                    ?>
+                    Pessoas Jurídicas Cadastradas 
+                    <?php echo "<b>".$numero['juridica']."</b>";?>
+                    <?php mysqli_close($conn); ?>
+                    <br/><br/>
+                    <?php
+                    include("conecta.php");
+                    $fisica = mysqli_query($conn, "SELECT count(*) as fisica from pessoa WHERE tipo='física'");
+                    $numero = mysqli_fetch_array($fisica)
+                    ?>
+                    Pessoas Cadastradas 
+                    <?php echo "<b>".$numero['fisica']."</b>";?>
+                    <?php mysqli_close($conn); ?>
+                    <br/>
+                </div>    
+        </div>
+        </div>
+        <div style="width: 30%; float:left; padding-left:2%; padding-right:2%">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>&nbsp;Aniversariantes do Mês</h3></div>
+                <div class="panel-body">
+                    Aniversariantes do Mês
+                    <br/><br/>
+                </div>    
+        </div>
+        </div>
             <br/><br/>
         </section>
         <footer>
