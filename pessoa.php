@@ -56,10 +56,12 @@
             <?php
                 include("conecta.php");
                 $letra = mysqli_query($conn, "SELECT DISTINCT LEFT(nome, 1) AS letra from pessoa ORDER BY letra");
+                echo '<form action="pessoa2.php" method="POST">';
                 while($letras = mysqli_fetch_array($letra)){
                     $inicial = strtoupper($letras['letra']);
                     echo '<button type="submit" class="btn btn-primary" value="'.$inicial.'" name="letra"><b>'.$inicial.'</b></button>|';
                 }
+                echo '</form>';
                 mysqli_close($conn);
             ?>
         </div>

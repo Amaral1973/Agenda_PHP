@@ -88,9 +88,9 @@
 
         <div style="width: 52%; padding-left:2%; padding-right:2%; float:right;">
         <div class="panel panel-primary">
-            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;Edição de Pessoas</h3></div>
+            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;Localização</h3></div>
                 <div class="panel-body">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.9669986312842!2d-51.94220698554656!3d-23.42555926247511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ecd72dbc0105a9%3A0xcb3ce548d96f1df9!2sAv.%20Tiradentes%20-%20Zona%2001%2C%20Maring%C3%A1%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1601073869586!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                Aqui a Localização
                 </div>    
         </div>
         </div>

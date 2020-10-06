@@ -9,6 +9,14 @@
     $email = $_POST['email'];
     $datanascimento = $_POST['datanascimento'];
     $profissao = $_POST['profissao'];
+    $pessoa = mysqli_query($conn, "SELECT * FROM pessoa WHERE nome='".$nome."' AND celular='".$celular."'");
+    if(mysqli_num_rows($pessoa) > 0){
+        echo "<script language='javascript' type='text/javascript'>
+        alert('Pessoa já cadastrada!');
+        window.location.href = 'pessoa.php';
+        </script>";
+        mysqli_close($conn);
+    }
     $sql = "INSERT INTO pessoa(tipo,nome,endereco,cidade,estado,celular,email,datanascimento,profissao) VALUES ('$tipo','$nome','$endereco','$cidade','$estado','$celular','$email','$datanascimento','$profissao')";
     if(mysqli_query($conn, $sql)){
         echo "<script language='javascript' type='text/javascript'>

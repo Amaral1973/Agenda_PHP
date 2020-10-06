@@ -80,7 +80,7 @@
                     $fisica = mysqli_query($conn, "SELECT count(*) as fisica from pessoa WHERE tipo='física'");
                     $numero = mysqli_fetch_array($fisica)
                     ?>
-                    Pessoas Cadastradas 
+                    Pessoas Físicas Cadastradas 
                     <?php echo "<b>".$numero['fisica']."</b>";?>
                     <?php mysqli_close($conn); ?>
                     <br/>
@@ -91,7 +91,18 @@
         <div class="panel panel-primary">
             <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>&nbsp;Aniversariantes do Mês</h3></div>
                 <div class="panel-body">
-                    Aniversariantes do Mês
+                    <?php
+                        include("conecta.php");
+                        $sql = mysqli_query($conn, "SELECT * from pessoa where month(datanascimento) = month(CURRENT_DATE())");
+                        while($aniversario = mysqli_fetch_array($sql)){
+                            $id = $aniversario['id'];
+                            echo "<a href='verpessoa.php?id=$id'>".$aniversario['nome']."</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                            $data = date_create($aniversario['datanascimento']);
+                            echo date_format($data, 'd/m/Y');
+                            echo "<br/>";
+                        }
+                        mysqli_close($conn);
+                    ?>
                     <br/><br/>
                 </div>    
         </div>

@@ -53,7 +53,7 @@
         <br/>
         <hr/>
         <div align="center">
-        <?php
+            <?php
                 include("conecta.php");
                 $letra = mysqli_query($conn, "SELECT DISTINCT LEFT(nome, 1) AS letra from pessoa ORDER BY letra");
                 echo '<form action="pessoa2.php" method="POST">';
@@ -71,9 +71,9 @@
         <div style="width: 85%; padding-left:5%; padding-right:5%;">
         <?php
             include("conecta.php");
-            echo "<h4>Pessoas Pesquisadas por Nome</h4>";
-            $nome = $_POST['procura'];
-            $sql = mysqli_query($conn, "SELECT * FROM pessoa WHERE nome LIKE '%".$nome."%'");
+            $letra = $_POST['letra'];
+            echo "<h4>Pessoas Cadastradas</h4>";
+            $sql = mysqli_query($conn, "SELECT * FROM pessoa WHERE nome LIKE '".$letra."%'");
             echo "<table class='table table-hover'>";
             echo "<tr>";
                 echo "<th>Nome</th>";
