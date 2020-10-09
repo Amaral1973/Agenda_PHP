@@ -2,7 +2,7 @@
     include("conecta.php");
     $nome = $_POST['nome'];
     $login = $_POST['login'];
-    $senha = $_POST['senha'];
+    $senha = base64_encode($_POST['senha']);
     $tipo = $_POST['tipo'];
     $usuario = mysqli_query($conn, "SELECT * FROM usuario WHERE nome='".$nome."' AND login='".$login."'");
     if(mysqli_num_rows($usuario) > 0){

@@ -3,7 +3,7 @@
     session_start();
     include("conecta.php");
     $login = $_POST['login'];
-    $senha = $_POST['senha'];
+    $senha = base64_encode($_POST['senha']);
     $logar = mysqli_query($conn, "SELECT * FROM usuario WHERE login = '$login' AND senha = '$senha'") or die(mysqli_connect_error());
     if(mysqli_num_rows($logar)>0){
         $usuario = mysqli_fetch_array($logar);

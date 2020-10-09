@@ -7,7 +7,7 @@
     $id = $_GET['id'];
     $nome = $_POST['nome'];
     $login = $_POST['login'];
-    $senha = $_POST['senha'];
+    $senha = base64_encode($_POST['senha']);
     $tipo = $_POST['tipo'];
     $sql = "UPDATE usuario SET nome='$nome', login='$login', senha='$senha', tipo='$tipo' WHERE id='$id'";
     if(mysqli_query($conn, $sql)){
