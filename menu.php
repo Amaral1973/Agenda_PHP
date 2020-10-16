@@ -6,6 +6,7 @@
             echo "<li role='presentation'><a href='usuario.php'>USUÁRIO</a></li>";
             echo "<li role='presentation'><a href='pessoa.php'>PESSOAS</a></li>";
             echo "<li role='presentation'><a href='expessoa.php'>PESSOAS APAGADAS</a></li>";
+            echo "<li role='presentation'><a href='paginacao.php'>RELATÓRIOS</a></li>";
         echo "</ul>";
     }
     else {
